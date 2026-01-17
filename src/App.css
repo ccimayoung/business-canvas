@@ -6,13 +6,14 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 22px;
-  color: #000000;
+
 }
 
 body {
   height: 100%;
   overflow-x: hidden;
   max-width: 100vw;
+  color: #000000;
 }
 
 ::-webkit-scrollbar {
