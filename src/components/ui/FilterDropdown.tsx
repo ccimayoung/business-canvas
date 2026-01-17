@@ -1,8 +1,9 @@
 import { css } from '@emotion/react';
-import { columnFlexCSS, rowFlexCSS } from '../../styles/globalDiv';
-import palette from '../../styles/palette';
-import { Font, handleFontStyle } from '../../styles/globalFont';
 import Checkbox from 'antd/es/checkbox/Checkbox';
+
+import { columnFlexCSS, rowFlexCSS } from '../../styles/globalDiv';
+import { handleFontStyle } from '../../styles/globalFont';
+import palette from '../../styles/palette';
 
 interface FilterDropdownProps {
     optionList: { label: string; value: string }[];
@@ -40,10 +41,14 @@ export const FilterDropdown = ({
 };
 
 const styles = {
-    wrapper: columnFlexCSS({
-        bgColor: palette.basic.white,
-        rGap: '8px',
-    }),
+    wrapper: css`
+        ${columnFlexCSS({
+            bgColor: palette.basic.white,
+            rGap: '8px',
+            padding: '8px',
+        })}
+        border-radius: 10px;
+    `,
     item: css`
         ${rowFlexCSS({
             w: '134px',

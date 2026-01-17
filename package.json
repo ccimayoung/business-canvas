@@ -16,6 +16,7 @@
     "@emotion/styled": "^11.14.1",
     "@hookform/resolvers": "^5.2.2",
     "antd": "^6.2.0",
+    "dayjs": "^1.11.19",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-unused-imports": "^4.3.0",
     "react": "^19.2.0",

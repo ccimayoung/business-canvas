@@ -1,11 +1,10 @@
-import { FilterFilled, FilterOutlined } from '@ant-design/icons';
+import { FilterFilled } from '@ant-design/icons';
 import { css } from '@emotion/react';
 import { Popover } from 'antd';
 
 import palette from '../../styles/palette';
 
 import { FilterDropdown } from './FilterDropdown';
-import type { filterOptionType } from '../../types/userDataFilterType';
 
 interface TableFilterPopoverProps {
     optionList: { label: string; value: string }[];
@@ -31,6 +30,7 @@ export const TableFilterPopover = ({
             trigger="click"
             placement="bottomRight"
             arrow={false}
+            styles={{ container: { padding: 0 } }}
         >
             <FilterFilled
                 css={css`

@@ -1,18 +1,18 @@
+import { css } from '@emotion/react';
+import { type TableColumnsType } from 'antd';
+import Checkbox from 'antd/es/checkbox/Checkbox';
 import { useMemo } from 'react';
+
+import { TableFilterPopover } from '../components/ui/TableFilterPopover';
+import { TableMorePopover } from '../components/ui/TableMorePopover';
+import { rowFlexCSS } from '../styles/globalDiv';
 import type {
     filterOptionListType,
     userFiilterStateType,
     userFilterKeyType,
 } from '../types/userDataFilterType';
 import type { UserDataType } from '../types/userDataType';
-import { Button, type MenuProps, type TableColumnsType } from 'antd';
-import { css } from '@emotion/react';
-import { rowFlexCSS } from '../styles/globalDiv';
-import { TableFilterPopover } from '../components/ui/TableFilterPopover';
-import Checkbox from 'antd/es/checkbox/Checkbox';
-import Dropdown from 'antd/es/dropdown/dropdown';
-import { MoreOutlined } from '@ant-design/icons';
-import palette from '../styles/palette';
+
 
 interface useUserTableColumnsProps {
     userData: UserDataType[];
@@ -105,14 +105,10 @@ export const useUserTableColumns = ({
             dataIndex: 'setting',
             width: 48,
             render: (_, record) => (
-                <Dropdown
-                    key={record.key}
-                    menu={{ items: getDropdownItems(record) }}
-                    trigger={['click']}
-                    placement="bottomRight"
-                >
-                    <Button type="text" icon={<MoreOutlined />} />
-                </Dropdown>
+                <TableMorePopover
+                    onEdit={() => handleUserInfoEdit(record.key)}
+                    onDelete={() => handleUserInfoDelete(record.key)}
+                />
             ),
         },
     ];
@@ -130,32 +126,3 @@ const styles = {
         })}
     `,
 };
-
-const handleDelete = (key: string) => {
-    console.log('Delete member:', key);
-};
-
-const handleEdit = (key: string) => {
-    console.log('Edit member:', key);
-};
-
-const getDropdownItems = (record: UserDataType): MenuProps['items'] => [
-    {
-        key: 'edit',
-        label: '수정',
-        onClick: () => handleEdit(record.key),
-    },
-    {
-        key: 'delete',
-        label: (
-            <span
-                css={css`
-                    color: ${palette.color.error};
-                `}
-            >
-                삭제
-            </span>
-        ),
-        onClick: () => handleDelete(record.key),
-    },
-];

@@ -1,17 +1,26 @@
 import { Table, type TableProps } from 'antd';
 import { useMemo, useState } from 'react';
+import { css } from '@emotion/react';
 
-import { initUserData } from '../../constants/initUserData';
+import { useUserTableColumns } from '../../hooks/useUserTableColumns';
 import type {
     userFiilterStateType,
     userFilterKeyType,
 } from '../../types/userDataFilterType';
 import type { UserDataType } from '../../types/userDataType';
-import { useUserTableColumns } from '../../hooks/useUserTableColumns';
+import { handleFontStyle } from '../../styles/globalFont';
 
-//todo : init 데이터에 env 설정에 따라 데이터 변경
-export const UserListTable = () => {
-    const [userData, setUserData] = useState<UserDataType[]>(initUserData);
+interface UserListTableProps {
+    userData: UserDataType[];
+    onClickUserEdit: (key: string) => void;
+    onClickUserDelete: (key: string) => void;
+}
+
+export const UserListTable = ({
+    userData,
+    onClickUserEdit,
+    onClickUserDelete,
+}: UserListTableProps) => {
     const [filters, setFilters] = useState<userFiilterStateType>({
         name: [],
         address: [],
@@ -29,17 +38,8 @@ export const UserListTable = () => {
 
     const handleFilterChange =
         (key: userFilterKeyType) => (values: string[]) => {
-            console.log('values: ', values);
             setFilters((prev) => ({ ...prev, [key]: values }));
         };
-
-    const handleUserInfoDelete = (key: string) => {
-        console.log('삭제', key);
-    };
-
-    const handleUserInfoEdit = (key: string) => {
-        console.log('수정', key);
-    };
 
     const filteredUserData = useMemo(() => {
         return userData.filter((user) => {
@@ -69,8 +69,8 @@ export const UserListTable = () => {
         userData,
         filters,
         handleFilterChange,
-        handleUserInfoEdit,
-        handleUserInfoDelete,
+        handleUserInfoEdit: onClickUserEdit,
+        handleUserInfoDelete: onClickUserDelete,
     });
 
     return (
@@ -79,6 +79,23 @@ export const UserListTable = () => {
             columns={userTableColumns}
             dataSource={filteredUserData}
             pagination={false}
+            css={css`
+                /* 테이블 헤더(컬럼 제목) 폰트 스타일 */
+                .ant-table-thead > tr > th {
+                    font-family: Pretendard-Regular;
+                    font-size: 14px;
+                    line-height: 22px;
+                    font-weight: 400;
+                }
+                
+                /* 테이블 셀 내용 폰트 스타일 */
+                .ant-table-tbody > tr > td {
+                    font-family: Pretendard-Regular;
+                    font-size: 14px;
+                    line-height: 22px;
+                    font-weight: 400;
+                }
+            `}
             //todo : 테이블 스타일 확인
         />
     );
