@@ -1,9 +1,10 @@
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
+
+import { PrivatePage } from './pages/PrivatePage';
 import { UndifinedPage } from './pages/UndifinedPage';
 import { UserListPage } from './pages/UserListPage';
-import { Route, Routes } from 'react-router-dom';
 import { AllAccessRoute } from './router/AllAccessRoute';
-import { PrivatePage } from './pages/PrivatePage';
 import { PrivateAccessRoute } from './router/PrivateAccessRoute';
 
 function App() {

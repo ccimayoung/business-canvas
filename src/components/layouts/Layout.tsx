@@ -1,5 +1,6 @@
 import { css } from '@emotion/react';
 import { type PropsWithChildren } from 'react';
+
 import palette from '../../styles/palette';
 
 interface LayoutProps {

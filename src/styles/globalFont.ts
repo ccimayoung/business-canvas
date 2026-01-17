@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
-import type { fontHandleType, fontProps } from '../types/styleTypes';
+
+import type { fontHandleType, fontProps } from '../types/styleType';
+
 import palette from './palette';
 
 export const handleFontStyle = (fontType: fontHandleType) => {

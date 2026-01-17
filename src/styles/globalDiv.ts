@@ -1,6 +1,7 @@
-import styled from '@emotion/styled';
-import type { divProps } from '../types/styleTypes';
 import { css } from '@emotion/react';
+
+import type { divProps } from '../types/styleType';
+
 
 //* row 로 여러 컴포넌트를 감쌀 때 사용하는 div.
 export const rowFlexCSS = (props: divProps) => css`
