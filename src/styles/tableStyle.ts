@@ -15,7 +15,7 @@ export const tableStyles: TableProps<UserDataType>['styles'] = {
     body: {
         cell: {
             height: '48px',
-            padding: '13px 8px',
+            padding: '3px 8px',
             fontFamily: 'Pretendard-Regular',
             fontSize: '14px',
             lineHeight: '22px',
