@@ -9,9 +9,9 @@ export const tableStyles: TableProps<UserDataType>['styles'] = {
             fontFamily: 'Pretendard-Semibold',
             fontSize: '14px',
             lineHeight: '22px',
-            fontWeight: 600,
         },
     },
+
     body: {
         cell: {
             height: '48px',
