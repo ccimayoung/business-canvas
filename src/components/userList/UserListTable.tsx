@@ -9,6 +9,7 @@ import type {
 } from '../../types/userDataFilterType';
 import type { UserDataType } from '../../types/userDataType';
 import { handleFontStyle } from '../../styles/globalFont';
+import { tableStyles } from '../../styles/tableStyle';
 
 interface UserListTableProps {
     userData: UserDataType[];
@@ -79,24 +80,7 @@ export const UserListTable = ({
             columns={userTableColumns}
             dataSource={filteredUserData}
             pagination={false}
-            css={css`
-                /* 테이블 헤더(컬럼 제목) 폰트 스타일 */
-                .ant-table-thead > tr > th {
-                    font-family: Pretendard-Regular;
-                    font-size: 14px;
-                    line-height: 22px;
-                    font-weight: 400;
-                }
-                
-                /* 테이블 셀 내용 폰트 스타일 */
-                .ant-table-tbody > tr > td {
-                    font-family: Pretendard-Regular;
-                    font-size: 14px;
-                    line-height: 22px;
-                    font-weight: 400;
-                }
-            `}
-            //todo : 테이블 스타일 확인
+            styles={tableStyles}
         />
     );
 };
