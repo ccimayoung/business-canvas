@@ -1,15 +1,13 @@
 import { Table, type TableProps } from 'antd';
 import { useMemo, useState } from 'react';
-import { css } from '@emotion/react';
 
 import { useUserTableColumns } from '../../hooks/useUserTableColumns';
+import { tableStyles } from '../../styles/tableStyle';
 import type {
     userFiilterStateType,
     userFilterKeyType,
 } from '../../types/userDataFilterType';
 import type { UserDataType } from '../../types/userDataType';
-import { handleFontStyle } from '../../styles/globalFont';
-import { tableStyles } from '../../styles/tableStyle';
 
 interface UserListTableProps {
     userData: UserDataType[];

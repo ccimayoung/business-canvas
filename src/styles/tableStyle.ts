@@ -1,4 +1,5 @@
 import type { TableProps } from 'antd';
+
 import type { UserDataType } from '../types/userDataType';
 
 export const tableStyles: TableProps<UserDataType>['styles'] = {

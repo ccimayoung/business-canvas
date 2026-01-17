@@ -3,11 +3,11 @@ import { Form, Modal } from 'antd';
 
 import { useUserForm } from '../../hooks/useUserForm';
 import { userFormFieldsConfig } from '../../schemas/userFormField';
+import { handleFontStyle } from '../../styles/globalFont';
+import palette from '../../styles/palette';
 import type { UserDataType } from '../../types/userDataType';
 
 import { FieldRenderer } from './FieldRenderer';
-import palette from '../../styles/palette';
-import { handleFontStyle } from '../../styles/globalFont';
 
 interface UserInfoModalProps {
     isUserInfoModalOpen: boolean;
