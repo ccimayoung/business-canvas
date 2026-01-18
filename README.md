@@ -1,7 +1,13 @@
-### 고려사항
+## 고려사항
 
--   확장성 있는 구조 : zod는 개별 max를 설정하지 않고, text/textarea 일 경우 헬프 함수를 통해 자동으로 max 글자수 설정. 필드 추가를 위해서는 UserDataType, formField, zod 추가만 하면 확장되는 구조로 생성.Form과 table UI는 자동 생성
-    ext의 max-length : 피그마의 유저 정보 input의 에러메세지를 띄우기 위해 max-length에 도달해도 입력 불가 처리하지 않음.
+**확장성 있는 구조**
+-  추후 필드 추가를 고려하여 fieldConfig, type, zod 설정만 수정하면 확장되는 구조로 수정
+    - 수정이 필요한 부분 : userFormField.ts의 fieldConfig, userDataType.ts의 UserDataType, userInfoSchema.ts의 userInfoSchema
+    - Form과 table UI는 자동 생성
+- zod는 개별 max를 설정하지 않고, text/textarea 일 경우 헬프 함수를 통해 자동으로 max 글자수 설정. 
+  
+ **max-length**
+- 피그마 요구사항은 모달의 input, textarea의 max 에러메세지를 보여주기. 따라서 max-length에 도달해도 input, textrea 입력 불가 처리하지 않음.
 
 ## 기술 스택
 
