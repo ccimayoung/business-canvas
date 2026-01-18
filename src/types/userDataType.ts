@@ -7,3 +7,5 @@ export type UserDataType = {
     job: string;
     agreeEmail: boolean;
 };
+
+export type UserDataOmitKeyType = Omit<UserDataType, 'key'>;

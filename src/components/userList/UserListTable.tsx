@@ -3,6 +3,7 @@ import { useMemo, useState } from 'react';
 
 import { useUserTableColumns } from '../../hooks/useUserTableColumns';
 import { tableStyles } from '../../styles/tableStyle';
+import { userFormFieldsConfig } from '../../types/schemas/userFormField';
 import type {
     userFiilterStateType,
     userFilterKeyType,
@@ -20,13 +21,12 @@ export const UserListTable = ({
     onClickUserEdit,
     onClickUserDelete,
 }: UserListTableProps) => {
-    const [filters, setFilters] = useState<userFiilterStateType>({
-        name: [],
-        address: [],
-        memo: [],
-        signUpDate: [],
-        job: [],
-        agreeEmail: [],
+    const [filters, setFilters] = useState<userFiilterStateType>(() => {
+        const initialFilters = {} as userFiilterStateType;
+        userFormFieldsConfig.forEach(({ name }) => {
+            initialFilters[name as userFilterKeyType] = [];
+        });
+        return initialFilters;
     });
 
     const rowSelection: TableProps<UserDataType>['rowSelection'] = {

@@ -1,6 +1,6 @@
-import type { UserDataType } from './userDataType';
+import type { UserDataOmitKeyType } from './userDataType';
 
-export type userFilterKeyType = Exclude<keyof UserDataType, 'key'>;
+export type userFilterKeyType = keyof UserDataOmitKeyType;
 
 export type userFiilterStateType = Record<userFilterKeyType, string[]>;
 

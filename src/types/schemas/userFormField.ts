@@ -23,18 +23,12 @@ export const userFormFieldsConfig: FieldConfigType[] = [
         type: 'text',
         label: '주소',
         placeholder: '주소를 입력하세요',
-        options: {
-            maxLength: 20,
-        },
     },
     {
         name: 'memo',
         type: 'textarea',
         label: '메모',
         placeholder: '메모를 입력하세요',
-        options: {
-            maxLength: 50,
-        },
     },
     {
         name: 'signUpDate',
@@ -48,9 +42,7 @@ export const userFormFieldsConfig: FieldConfigType[] = [
         type: 'select',
         label: '직업',
         placeholder: '직업을 선택하세요',
-        options: {
-            selectOptions: JOB_OPTIONS,
-        },
+        selectOptions: JOB_OPTIONS,
     },
     {
         name: 'agreeEmail',

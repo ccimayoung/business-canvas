@@ -30,8 +30,7 @@ export const loadUserData = (): UserDataType[] => {
         } else {
             return [...initUserData]; // Local Storage가 비어있으면 샘플 데이터 반환
         }
-    } catch (error) {
-        console.error('Failed to load members from localStorage:', error);
+    } catch {
         return [...initUserData];
     }
 };
@@ -42,9 +41,5 @@ export const saveUserData = (userData: UserDataType[]): void => {
     if (storageType === 'in-memory') return;
 
     // local-storage
-    try {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(userData));
-    } catch (error) {
-        console.error('Failed to save members to localStorage:', error);
-    }
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(userData));
 };

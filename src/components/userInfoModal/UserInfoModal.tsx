@@ -5,14 +5,18 @@ import { useUserForm } from '../../hooks/useUserForm';
 import { handleFontStyle } from '../../styles/globalFont';
 import palette from '../../styles/palette';
 import { userFormFieldsConfig } from '../../types/schemas/userFormField';
-import type { UserDataType } from '../../types/userDataType';
+import type { UserFormDataType } from '../../types/schemas/userInfoSchema';
+import type {
+    UserDataOmitKeyType,
+    UserDataType,
+} from '../../types/userDataType';
 
 import { FieldRenderer } from './FieldRenderer';
 
 interface UserInfoModalProps {
     isUserInfoModalOpen: boolean;
     setIsUserInfoModalOpen: (isOpen: boolean) => void;
-    onClickUserSubmit: (data: Omit<UserDataType, 'key'>) => void;
+    onClickUserSubmit: (data: UserDataOmitKeyType) => void;
     initialData?: UserDataType | null;
 }
 
@@ -78,7 +82,7 @@ export const UserInfoModal = ({
                 <>
                     {userFormFieldsConfig.map((fieldConfig) => {
                         const { name, label, required } = fieldConfig;
-                        const error = errors[name];
+                        const error = errors[name as keyof UserFormDataType];
 
                         const customLabel = (
                             <span>

@@ -16,7 +16,7 @@ interface FieldRendererProps {
  * 필드 타입에 따라 컴포넌트 반환
  */
 export const FieldRenderer = ({ fieldConfig, control }: FieldRendererProps) => {
-    const { name, type, placeholder, options } = fieldConfig;
+    const { name, type, placeholder, selectOptions } = fieldConfig;
 
     return (
         <Controller
@@ -69,7 +69,7 @@ export const FieldRenderer = ({ fieldConfig, control }: FieldRendererProps) => {
                                 {...field}
                                 value={value}
                                 placeholder={placeholder}
-                                options={options?.selectOptions}
+                                options={selectOptions}
                                 style={{ width: '360px' }}
                             />
                         );

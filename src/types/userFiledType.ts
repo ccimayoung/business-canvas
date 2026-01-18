@@ -8,8 +8,5 @@ export type FieldConfigType = {
     label?: string;
     required?: boolean;
     placeholder?: string;
-    options?: {
-        maxLength?: number;
-        selectOptions?: Array<{ value: string; label: string }>;
-    };
+    selectOptions?: Array<{ value: string; label: string }>;
 };

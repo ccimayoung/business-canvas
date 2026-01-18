@@ -8,7 +8,7 @@ import { UserListTable } from '../components/userList/UserListTable';
 import { rowFlexCSS } from '../styles/globalDiv';
 import { Font } from '../styles/globalFont';
 import palette from '../styles/palette';
-import type { UserDataType } from '../types/userDataType';
+import type { UserDataOmitKeyType, UserDataType } from '../types/userDataType';
 import { loadUserData, saveUserData } from '../utils/storage';
 
 export const UserListPage = () => {
@@ -18,7 +18,7 @@ export const UserListPage = () => {
     );
     const [editingUser, setEditingUser] = useState<UserDataType | null>(null);
 
-    const onClickUserSubmit = (data: Omit<UserDataType, 'key'>) => {
+    const onClickUserSubmit = (data: UserDataOmitKeyType) => {
         if (editingUser) {
             setUserData((prev) =>
                 prev.map((user) =>
