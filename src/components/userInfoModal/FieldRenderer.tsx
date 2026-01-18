@@ -4,7 +4,7 @@ import type { Dayjs } from 'dayjs';
 import { Controller } from 'react-hook-form';
 import type { Control } from 'react-hook-form';
 
-import type { UserFormDataType } from '../../schemas/userInfoSchema';
+import type { UserFormDataType } from '../../types/schemas/userInfoSchema';
 import type { FieldConfigType } from '../../types/userFiledType';
 
 interface FieldRendererProps {

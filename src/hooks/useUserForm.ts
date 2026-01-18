@@ -7,9 +7,8 @@ import { useForm } from 'react-hook-form';
 import {
     userInfoSchema,
     type UserFormDataType,
-} from '../schemas/userInfoSchema';
+} from '../types/schemas/userInfoSchema';
 import type { UserDataType } from '../types/userDataType';
-
 
 interface UseUserFormProps {
     isUserInfoModalOpen: boolean;

@@ -2,9 +2,9 @@ import { css } from '@emotion/react';
 import { Form, Modal } from 'antd';
 
 import { useUserForm } from '../../hooks/useUserForm';
-import { userFormFieldsConfig } from '../../schemas/userFormField';
 import { handleFontStyle } from '../../styles/globalFont';
 import palette from '../../styles/palette';
+import { userFormFieldsConfig } from '../../types/schemas/userFormField';
 import type { UserDataType } from '../../types/userDataType';
 
 import { FieldRenderer } from './FieldRenderer';
@@ -16,7 +16,6 @@ interface UserInfoModalProps {
     initialData?: UserDataType | null;
 }
 
-//todo : 모달 디자인
 export const UserInfoModal = ({
     isUserInfoModalOpen,
     setIsUserInfoModalOpen,

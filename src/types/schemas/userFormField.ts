@@ -1,4 +1,4 @@
-import type { FieldConfigType } from '../types/userFiledType';
+import type { FieldConfigType } from '../userFiledType';
 
 export const JOB_OPTIONS = [
     { value: '개발자', label: '개발자' },
